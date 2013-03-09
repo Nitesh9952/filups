@@ -1,0 +1,25 @@
+<h1>Welcome Home  </h1>
+
+<%=link_to " Sign Out ", "/users/sign_out", 'data-method' => :delete, :class => "delete", :confirm => "Are you sure ?"%>
+
+
+<%= form_for :upload, :url => uploads_path, :html => { :multipart => true } do |form| %>
+  <label for="document">File to upload</lable> <%= form.file_field :document %>
+  <%= submit_tag %>
+<% end %>
+
+<h1>Listing Uploads</h1>
+
+<table border="1">
+  <tr>
+    <th>File Name</th>
+    <th>Download link</th>
+  </tr>
+
+  <% @uploads.each do |upload| %>
+    <tr>
+      <td><%= upload.document_file_name %></td>
+      <td><%= link_to "Download Link" , upload.document.url %></td>
+    <tr>
+  <% end %>
+</table>

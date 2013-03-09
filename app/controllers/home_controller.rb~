@@ -1,0 +1,12 @@
+class HomeController < ApplicationController
+  def index
+  end
+  
+  #def upload
+    #post = upload.save(params[:document])
+   # flash[:notice]="Upload completed"
+    # render :nothing => true
+  #end
+
+end
+
